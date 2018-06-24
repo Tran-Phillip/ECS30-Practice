@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage[left = 1.5cm, right=1.5cm, top = 4cm]{geometry}
+
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.5}
+
+\DeclareRobustCommand* {\tab}{\hspace{1cm}}
+\DeclareRobustCommand* {\tabb}{\hspace{1.3cm}}
+\DeclareRobustCommand* {\ga}{\textgreater}
+\setlength{\voffset}{-0.75in}
+\setlength{\headsep}{5pt}
+
+\begin{document}
+\textbf{\large{ECS PHILL \protect\tab\tab\tab\tab\hspace{0.0cm} Program \#1.5	 \tab\tab\tab\tab June 23, 2018}}
+
+	\begin{center}
+		\LARGE{Conditionals}
+	\end{center}
+	\large{\tab Since conditionals tend to be simple enough instead of doing any coding assignments, this assignment will focus more on identifying bugs and mistakes the beginners tend to make.}
+
+	\section{Bug 1}
+		\large{Consider this bit of code:\\\\
+		\#include \textless stdio.h \ga
+		\null\tab \\
+		int main()\\
+		\{
+		\\
+		\null\tab for(int i = 0; i \textless 10; i++)\\
+		\null\tab\{\\
+		\null\tab\tab	if(i \% 2 == 0)\\
+		\null\tab\tab	\{\\
+		\null\tab\tab\tab		printf("\%d", i);\\
+		\null\tab\tab	\}\\
+		\null\tab\tab   else 
+						\{\\
+		\null\tab\tab\tab       printf("Not a even number!");\\
+		\null\tab\tab\tab       return 0;\\
+		\null\tab\tab				\}\\
+		\null\tab \}\\
+		\}}\\\\
+		\large{\null\tab This code just prints out the even numbers from 1 to 10, and if a number is not even, it will print the number isn't even. Except it doesn't. In fact it doesnt work at all. Whats wrong with it?}\\
+	\section{Bug 2}
+		\large{Consider this bit of code: \\\\}
+		\#include \textless stdio.h \ga
+		\null\tab \\
+		int main()\\
+		\{
+		\\
+\null\tab int age = 0;\\
+\null\tab int attractiveness = 0;\\
+\null\tab char sex = '0';\\
+\null\tab\\
+\null\tab scanf(''\%d \hspace{0.1cm}'', \&age);\\
+\null\tab scanf(''\%d \hspace{0.1cm} '', \&attractiveness);\\
+\null\tab scanf(''\%c'', \&sex);\\\\
+\null\tab if(age \textgreater 18)\\
+\null\tab \{\\
+\null\tab\tab if(sex == 'F')\\
+\null\tab\tab				\{\\
+\null\tab\tab\tab printf(''Its a match!'');\\
+\null\tab\tab				\}\\
+\null\tab\tab else\{\\
+\null\tab\tab\tab printf(''Look elsewhere'');\\
+\null\tab\tab\}\\
+\null\tab   \}\\
+\null\tab else if(attractiveness \ga 7 \&\& age \textgreater 18)\\
+\null\tab \{\\
+\null\tab\tab printf(''It's a match!...for one of you at least'');\\
+\null\tab \}\\
+		\}\\\\
+\large{\null\tab This code is to help my dating profile game. The program will prompt the user to input their age, attractiveness level, and gender and based on what the user inputted will print whether or not they are a match for me. If the user is over 18 and is female, the program will print a match (welp. thats sad.) else if the user has an attractiveness level greater than 7 and they're also over 18, the program will also print a match!\\
+\null\tab However, on the input ''18 10 M'', this code returns the wrong output. Why?}
+
+
+\end{document}
